@@ -9,7 +9,7 @@ let end = false;
 do {
     const answer = await inquirer.prompt({
         name: "userGuessedNumber",
-        message: chalk.yellow("\nGuess the number from 1 to 10:"),
+        message: chalk.yellow("\nGuess the number between 1-10:"),
         type: "number",
         validate: input => {
             if (!isNaN(input) && Number.isInteger(input)) {
@@ -21,7 +21,7 @@ do {
         }
     });
     if (parseInt(answer.userGuessedNumber) === randomNumberGenerator()) {
-        console.log(chalk.green("You guessed the correct number"));
+        console.log(chalk.green("Congratulations! You guessed the correct number"));
     }
     else {
         console.log(chalk.red("Your guess was wrong"));
